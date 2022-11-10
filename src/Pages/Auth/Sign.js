@@ -8,7 +8,31 @@ import UseTitle from '../../TitleHook/TitleHook';
 
 const fbUser = new FacebookAuthProvider();
 const Sign = () => {
+    // title set 
+    UseTitle('Sign Up')
+    const { handleSign, handleFb } = useContext(UserContext);
+    const handleRegis = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const pass = e.target.password.value
+        const name = e.target.name.value
+        const photo = e.target.photo.value
+        handleSign(email, pass)
+            .then((res) => {
+                updateProfile(res.user, {
+                    displayName: name, photoURL: photo
+                })
+                toast.success('successfully registered');
 
+            })
+            .catch(err => console.log(err))
+    }
+
+    const handleFace = () => {
+        handleFb(fbUser).then(res => {
+            const user = res.user;
+        }).catch(err => console.log(err))
+    }
     return (
         <div className="lg:w-2/5 mx-auto border py-7 px-3">
             <form onSubmit={handleRegis} className="flex flex-col gap-4 ">
