@@ -16,6 +16,10 @@ const AuthContext = ({ children }) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, pass);
     }
+    // log in with facebook 
+    const handleFb = (provider) => {
+        return signInWithPopup(auth, provider)
+    }
 
     // handle sign out 
     const handleOut = () => {
