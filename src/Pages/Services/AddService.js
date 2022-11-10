@@ -8,7 +8,39 @@ const AddService = () => {
     UseTitle('Add Service')
 
     // handle service add 
+    const handleService = (e) => {
+        e.preventDefault();
+        const from = e.target;
+        const name = from.name.value;
+        const photo = from.photo.value;
+        const price = from.price.value + '$';
+        const rating = from.rating.value;
+        const description = from.description.value;
+        // all object 
+        const service = {
+            service_name: name,
+            img: photo,
+            price: price,
+            rating: rating,
+            description: description
+        }
+        fetch('https://services-server-nu.vercel.app/all-services', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(service)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Service Successfully Added!')
 
+                }
+            })
+            .catch(error => console.log(error))
+        from.reset()
+    }
     return (
         <div>
 
