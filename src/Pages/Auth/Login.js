@@ -11,7 +11,49 @@ import { UserContext } from './AuthContext';
 const fbUser = new FacebookAuthProvider();
 
 const Login = () => {
+    // title set 
+    UseTitle('Login')
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    let from = location.state?.from?.pathname || '/'
+    const { handleFb, handleLog } = useContext(UserContext);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const pass = e.target.password.value
+        handleLog(email, pass)
+            .then(result => {
+                const currentUser = {
+                    uid: result.user.email
+                }
+
+                fetch('https://services-server-nu.vercel.app/jwt', {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(currentUser)
+                }).then(res => res.json())
+                    .then(data => {
+                        toast.success("Successfully Log in")
+                        navigate(from, { replace: true });
+                        localStorage.setItem('service-token', data.token)
+                    })
+            })
+            .catch(err => console.log(err))
+    }
+
+
+    const handleFace = () => {
+        handleFb(fbUser).then(res => {
+
+            const user = res.user;
+            navigate(from, { replace: true });
+
+        }).catch(err => console.log(err))
+    }
     return (
         <div className="lg:w-2/5 mx-auto border py-7 px-3">
             <form onSubmit={handleLogin} className="flex flex-col gap-4 ">
