@@ -1,4 +1,3 @@
-import { Card } from 'flowbite-react';
 import React from 'react';
 import UseTitle from '../../TitleHook/TitleHook';
 
