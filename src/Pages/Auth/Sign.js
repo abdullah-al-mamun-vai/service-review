@@ -1,11 +1,11 @@
 import { FacebookAuthProvider, updateProfile } from 'firebase/auth';
-import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
+import { Button, Label, TextInput } from 'flowbite-react';
 import React, { useContext, useState } from 'react';
 import { FaFacebook } from 'react-icons/fa'
 import { UserContext } from './AuthContext';
 import toast, { } from 'react-hot-toast';
 import UseTitle from '../../TitleHook/TitleHook';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const fbUser = new FacebookAuthProvider();
 const Sign = () => {
@@ -14,6 +14,7 @@ const Sign = () => {
     // title set 
     UseTitle('Sign Up')
     const { handleSign, handleFb } = useContext(UserContext);
+    const navigate = useNavigate();
     // handle register funcion 
     const handleRegis = (e) => {
         e.preventDefault();
@@ -21,13 +22,17 @@ const Sign = () => {
         const pass = e.target.password.value
         const name = e.target.name.value
         const photo = e.target.photo.value
-
+        if (pass.length < 6) {
+            toast.error("password must have 6 character")
+            return;
+        }
         handleSign(email, pass)
             .then((res) => {
                 updateProfile(res.user, {
                     displayName: name, photoURL: photo
                 })
-                toast.success('successfully registered');
+                toast.success('successfully registered')
+                navigate('/')
 
             })
             .catch(err => setError(err))
