@@ -1,5 +1,6 @@
 import { Footer } from 'flowbite-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FootSection = () => {
     return (
@@ -8,13 +9,13 @@ const FootSection = () => {
             <Footer container={true} className="bg-slate-300">
                 <div className="w-full text-center">
                     <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
-                        <Footer.Brand
-                            href="/"
-                            src="https://i.ibb.co/XyC99s8/attachment-82859174-removebg-preview.png"
-                            alt="my tech Logo"
-                            name=" IT Technician"
-                            className='capitalize text-green-900'
-                        />
+                        <Link to={'/'}>
+
+                            <div className='flex items-center overflow-hidden'>
+                                <img src="https://i.ibb.co/XyC99s8/attachment-82859174-removebg-preview.png" alt="our logo" className='w-20' />
+                                <p className="text-green-900 ml-1 font-bold text-lg">IT Technician</p>
+                            </div>
+                        </Link>
                         {/* footer link  */}
                         <Footer.LinkGroup>
                             <Footer.Link href="#" className=' text-green-900 ml-2 '>
@@ -39,9 +40,9 @@ const FootSection = () => {
                         by="reserved by Abdullah AL Mamun"
                         year={2023}
                     />
-                </div>
-            </Footer>
-        </div>
+                </div >
+            </Footer >
+        </div >
     );
 };
 

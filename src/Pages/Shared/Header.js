@@ -13,7 +13,7 @@ const Header = () => {
             className="sticky top-0 z-20 left-0 bg-pink-100 "
         >
             {/* header logo  */}
-            <Navbar.Brand href="/" className='flex items-center overflow-hidden'>
+            <Navbar.Brand className='flex items-center overflow-hidden'>
                 <img
                     src="https://i.ibb.co/XyC99s8/attachment-82859174-removebg-preview.png"
                     className="w-20 "

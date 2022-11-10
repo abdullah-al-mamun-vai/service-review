@@ -11,7 +11,8 @@
  7. react hot toatify
  8. react photo view
  9. react loader 
- 10. mongoDB
+ 10. mongoDB  
+ 11. kitwind ui
  # i use two authentioncation system in this website
  * email and password
  * facebook authentication
@@ -27,6 +28,7 @@
 
 * Live site: https://edu-coures-auth.web.app/home
 
-* client side: https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-abdullah-al-mamun-vai
+* client side: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-abdullah-al-mamun-vai
 
-* sever side code: https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-abdullah-al-mamun-vai
+
+* sever side code: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-abdullah-al-mamun-vai

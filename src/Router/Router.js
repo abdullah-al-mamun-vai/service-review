@@ -10,9 +10,10 @@ import Blog from "../Pages/Blog/Blog";
 import MyReview from "../Pages/Review/MyReview";
 import EditReview from "../Pages/Review/EditReview";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../Pages/Errorpage/ErrorPage";
 const router = createBrowserRouter([
     {
-        path: '/', element: <Layout></Layout>, children: [
+        path: '/', element: <Layout></Layout>, errorElement: <ErrorPage></ErrorPage>, children: [
             { path: '/', element: <Home></Home> },
             {
                 path: '/services', loader: async () => {
