@@ -6,7 +6,37 @@ import { UserContext } from '../Auth/AuthContext';
 const ReviewForm = ({ service }) => {
     const { service_name, img, price, _id } = service
     const { user } = useContext(UserContext)
+    const handleReview = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value
+        const rating = e.target.rating.value
+        const message = e.target.message.value
 
+        const review = {
+            email: email,
+            service_name: service_name,
+            service_photo: img,
+            category_Id: _id,
+            rating: rating,
+            price: price,
+            message: message,
+            reviewer_photo: user?.photoURL,
+            reviewer_name: user?.displayName
+        }
+        fetch('https://services-server-nu.vercel.app/all-reviews', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review),
+        })
+            .then(res => res.json())
+            .then(data => {
+            })
+            .catch(error => console.log(error))
+        e.target.reset();
+
+    }
     return (
         <div>
             <div className=" mx-auto flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-900 dark:text-gray-100">
