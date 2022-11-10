@@ -13,7 +13,7 @@ const Slider = () => {
                         <div className='absolute top-1/4 text-white'>
                             <h2 className='lg:text-6xl md:text-5xl font-bold uppercase'>Tehnical support</h2>
                             <p className='my-2 lg:my-3 text-sm sm:text-lg lg:text-lg '>I provide top quality support for various issues <br /> related to setting up internet connections,</p>
-                            <Button className='mx-auto font-bold uppercase'>
+                            <Button color="success" className='mx-auto font-bold uppercase'>
                                 get started
                             </Button>
                         </div>

@@ -21,6 +21,7 @@ const Sign = () => {
         const pass = e.target.password.value
         const name = e.target.name.value
         const photo = e.target.photo.value
+
         handleSign(email, pass)
             .then((res) => {
                 updateProfile(res.user, {
@@ -105,13 +106,13 @@ const Sign = () => {
                         {error ? 'email-already-in-use' : ''}
                     </Label>
                 </div>
-                <Button type="submit" className='bg-green-900'>
+                <Button type="submit" color="success" >
                     Submit
                 </Button>
             </form>
             <div>
                 {/* facebook handle  */}
-                <Button onClick={handleFace} className='w-full bg-green-900  mt-2'>
+                <Button onClick={handleFace} color="success" className='w-full  mt-2'>
                     Log in with <FaFacebook className='ml-2'></FaFacebook>
                 </Button>
                 {/* route another page added */}

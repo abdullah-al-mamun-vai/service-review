@@ -92,17 +92,17 @@ const Login = () => {
                         {error ? 'Username or password incorrect' : ''}
                     </Label>
                 </div>
-                <Button type="submit" className='bg-green-900'>
+                <Button type="submit" color="success">
                     Submit
                 </Button>
             </form>
             <div>
                 {/* handle facebook  */}
-                <Button onClick={handleFace} className='w-full bg-green-900  mt-2'>
+                <Button onClick={handleFace} color="success" className='w-full  mt-2'>
                     Log in with <FaFacebook className='ml-2'></FaFacebook>
                 </Button>
                 {/* router another page  */}
-                <p className='capitalize font-semibold my-2'>don't have account, Please <Link className='text-blue-500 font-bold' to={'/sing'}>Sign Up</Link></p>
+                <p className='capitalize font-semibold my-2'>don't have account, Please <Link className='text-blue-500 font-bold' to={'/sign'}>Sign Up</Link></p>
             </div>
         </div>
     );
