@@ -8,7 +8,32 @@ import UseTitle from '../../TitleHook/TitleHook';
 
 const MyReview = () => {
     // title set 
+    UseTitle('My Review')
+    const { user } = useContext(UserContext)
+    const [myReview, setMyReview] = useState([])
+    const [current, setCurrent] = useState(false);
 
+    useEffect(() => {
+        fetch(`https://services-server-nu.vercel.app/my-reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('service-token')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => setMyReview(data))
+            .catch(err => console.log(err))
+    }, [user?.email, current])
+    const handleDlt = (id) => {
+        fetch(`https://services-server-nu.vercel.app/my-reviews/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                toast.success("successfully deleted")
+                setCurrent(!current)
+            })
+            .catch(err => console.log(err))
+    }
     return (
         <div className='container mx-auto'>
             <Table hoverable={true}>
