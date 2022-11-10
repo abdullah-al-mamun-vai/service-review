@@ -5,7 +5,45 @@ import { UserContext } from '../Auth/AuthContext';
 import toast, { } from 'react-hot-toast';
 
 const EditReview = () => {
+    const navigate = useNavigate()
+    const { user } = useContext(UserContext)
+    const [myReview, setMyReview] = useState({})
+    const router = useParams()
+    const { id } = router;
+    useEffect(() => {
+        fetch(`https://services-server-nu.vercel.app/edit/${id}`)
+            .then(res => res.json())
+            .then(data => setMyReview(data))
+            .catch(err => console.log(err))
+    }, [])
+    const handleReview = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value
+        const rating = e.target.rating.value
+        const message = e.target.message.value
 
+        const review = {
+            email: email,
+            rating: rating,
+            message: message,
+        }
+        fetch(`https://services-server-nu.vercel.app/edit/${id}`, {
+            method: "PATCH",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Review Successfully Edit!')
+                    navigate('/my-reviews')
+                }
+            })
+            .catch(error => console.log(error))
+
+    }
     return (
         <div>
             <div className=" mx-auto flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-900 dark:text-gray-100">
