@@ -19,7 +19,7 @@ const Login = () => {
 
     let from = location.state?.from?.pathname || '/'
     const { handleFb, handleLog } = useContext(UserContext);
-
+    // handle login 
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -46,8 +46,7 @@ const Login = () => {
             .catch(err => setError(err))
         e.target.reset();
     }
-
-
+    // handle  facebook 
     const handleFace = () => {
         handleFb(fbUser).then(res => {
 
@@ -98,9 +97,11 @@ const Login = () => {
                 </Button>
             </form>
             <div>
+                {/* handle facebook  */}
                 <Button onClick={handleFace} className='w-full bg-green-900  mt-2'>
                     Log in with <FaFacebook className='ml-2'></FaFacebook>
                 </Button>
+                {/* router another page  */}
                 <p className='capitalize font-semibold my-2'>don't have account, Please <Link className='text-blue-500 font-bold' to={'/sing'}>Sign Up</Link></p>
             </div>
         </div>

@@ -14,6 +14,7 @@ const Sign = () => {
     // title set 
     UseTitle('Sign Up')
     const { handleSign, handleFb } = useContext(UserContext);
+    // handle register funcion 
     const handleRegis = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -30,7 +31,7 @@ const Sign = () => {
             })
             .catch(err => setError(err))
     }
-
+    // handle facebook 
     const handleFace = () => {
         handleFb(fbUser).then(res => {
             const user = res.user;
@@ -38,6 +39,7 @@ const Sign = () => {
     }
     return (
         <div className="lg:w-2/5 mx-auto border py-7 px-3">
+            {/* sing form  */}
             <form onSubmit={handleRegis} className="flex flex-col gap-4 ">
                 <div>
                     <div className="mb-2 block">
@@ -108,9 +110,11 @@ const Sign = () => {
                 </Button>
             </form>
             <div>
+                {/* facebook handle  */}
                 <Button onClick={handleFace} className='w-full bg-green-900  mt-2'>
                     Log in with <FaFacebook className='ml-2'></FaFacebook>
                 </Button>
+                {/* route another page added */}
                 <p className='capitalize font-semibold my-2'>your have already an account, Please <Link className='text-blue-500 font-bold' to={'/login'}>Login</Link></p>
             </div>
         </div>

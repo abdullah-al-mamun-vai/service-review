@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+    #IT Technician
+*  i make this web site for client review a it technician person in her work base,this website provide some facilities ,client can review specific service and edit specific service and delete specific service,if client log in there,some information my website here
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# i use some npm pacakage package to build this website .
+ 1. tailwind css
+ 2. flowbite react component
+ 3. mamba ui
+ 4. react icon
+ 5. firebase
+ 6. react-router-dom
+ 7. react hot toatify
+ 8. react photo view
+ 9. react loader 
+ 10. mongoDB
+ # i use two authentioncation system in this website
+ * email and password
+ * facebook authentication
+ # some feature of this website
+* beautifull UI,
+* used authentication system
+* used mongodb for store server side data in service page and my review page and service details page.
+* some ask and question added in Blog page. 
+* you can see where you submit review in my review page
+* you can edit your review on my review edit icon click to render a review form
+ * you can also delete your review in my reviews page
+* your can add a service in add servcice page
 
-## Available Scripts
+* Live site: https://edu-coures-auth.web.app/home
 
-In the project directory, you can run:
+* client side: https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-abdullah-al-mamun-vai
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* sever side code: https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-abdullah-al-mamun-vai

@@ -10,18 +10,20 @@ const Header = () => {
         <Navbar
             fluid={false}
             rounded={true}
-            className="sticky top-0 z-20 left-0 bg-pink-100"
+            className="sticky top-0 z-20 left-0 bg-pink-100 "
         >
-            <Navbar.Brand href="/" className='flex items-center'>
+            {/* header logo  */}
+            <Navbar.Brand href="/" className='flex items-center overflow-hidden'>
                 <img
                     src="https://i.ibb.co/XyC99s8/attachment-82859174-removebg-preview.png"
-                    className="w-20 overflow-hidden"
+                    className="w-20 "
                     alt="it Logo"
                 />
                 <span className="text-yellow-700 self-center whitespace-nowrap text-xl font-bold dark:text-white ">
                     IT Technician
                 </span>
             </Navbar.Brand>
+            {/* profile image area  */}
             <div className="flex md:order-2">
                 {user ?
                     <> <Dropdown
@@ -30,7 +32,7 @@ const Header = () => {
                         label={<Avatar alt="User settings" img={user?.photoURL} rounded={true} />}
                     >
                         <Dropdown.Header>
-                            <span className="block text-sm">
+                            <span className="block text-sm font-semibold capitalize">
                                 {user?.displayName}
                             </span>
                             <span className="block truncate text-sm font-medium">

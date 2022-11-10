@@ -10,12 +10,14 @@ const EditReview = () => {
     const [myReview, setMyReview] = useState({})
     const router = useParams()
     const { id } = router;
+    // get data 
     useEffect(() => {
         fetch(`https://services-server-nu.vercel.app/edit/${id}`)
             .then(res => res.json())
             .then(data => setMyReview(data))
             .catch(err => console.log(err))
     }, [])
+    // handleReview edit 
     const handleReview = (e) => {
         e.preventDefault();
         const email = e.target.email.value
@@ -46,6 +48,7 @@ const EditReview = () => {
     }
     return (
         <div>
+            {/* edit review start  */}
             <div className=" mx-auto flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-900 dark:text-gray-100">
                 <form onSubmit={handleReview}>
                     <div className="flex flex-col items-center w-full">

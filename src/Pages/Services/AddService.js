@@ -43,7 +43,7 @@ const AddService = () => {
     }
     return (
         <div>
-
+            {/* add service  */}
             <div className="my-6 w-4/5  lg:w-2/5 mx-auto border py-7 px-3">
                 <form onSubmit={handleService} className="flex flex-col gap-4 ">
                     <div>

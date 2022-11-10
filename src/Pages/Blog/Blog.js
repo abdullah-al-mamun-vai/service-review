@@ -8,10 +8,12 @@ const Blog = () => {
     return (
         <div className='lg:w-4/6 mx-auto h-screen '>
             <section className="dark:bg-gray-800 dark:text-gray-100">
+                {/* blog area  */}
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-                    <h2 className="text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
+                    <h2 className="text-2xl font-semibold sm:text-4xl mb-4">Frequently Asked Questions</h2>
 
                     <div className="space-y-4">
+                        {/* single blog  */}
                         <details className="w-full border rounded-lg">
                             <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Difference between SQL and NoSQL
                             </summary>
@@ -19,6 +21,8 @@ const Blog = () => {
                                 The dynamic schemata of NoSQL databases allow representation of alternative structures, often alongside each other, encouraging greater flexibility. There is less emphasis on planning, greater freedom when adding new attributes or fields, and the possibility of varied syntax across databases. As a group, however, NoSQL languages lack the standard interface which SQL provides, so more complex queries can be difficult to execute.
                                 Though there are many dialects of SQL, all share a common syntax and almost-identical grammar. When querying relational databases, fluency in one language translates to proficiency in most others. On the other hand, there is very little consistency between NoSQL languages, as they concern a diverse set of unrelated technologies. Many NoSQL databases have a unique data manipulation language constrained by particular structures and capabilities. </p>
                         </details>
+                        {/* single blog  */}
+
                         <details className="w-full border rounded-lg">
                             <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">What is JWT, and how does it work?</summary>
                             <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">What Is JWT?
@@ -28,6 +32,8 @@ const Blog = () => {
 
                                 A JWT is a string made up of three parts, separated by dots (.), and serialized using base64. In the most common serialization format, compact serialization, the JWT looks something like this: xxxxx.yyyyy.zzzzz.</p>
                         </details>
+                        {/* single blog  */}
+
                         <details className="w-full border rounded-lg">
                             <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Difference between JavaScript and Node.js
                             </summary>
@@ -44,6 +50,8 @@ const Blog = () => {
 
                                 JavaScript requires any running environment as it can execute on any engine such as Firefox’s spider monkey, v8 engine of google chrome, JavaScript core of Safari whereas Node.js runs only on the v8 engine of google chrome.</p>
                         </details>
+                        {/* single blog  */}
+
                         <details className="w-full border rounded-lg">
                             <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">How does NodeJS handle multiple requests at the same time?
                             </summary>

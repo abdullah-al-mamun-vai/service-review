@@ -4,6 +4,7 @@ import React from 'react';
 const FootSection = () => {
     return (
         <div className=''>
+            {/* footer logo  */}
             <Footer container={true} className="bg-slate-300">
                 <div className="w-full text-center">
                     <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
@@ -14,6 +15,7 @@ const FootSection = () => {
                             name=" IT Technician"
                             className='capitalize text-green-900'
                         />
+                        {/* footer link  */}
                         <Footer.LinkGroup>
                             <Footer.Link href="#" className=' text-green-900 ml-2 '>
                                 About
@@ -30,6 +32,7 @@ const FootSection = () => {
                         </Footer.LinkGroup>
                     </div>
                     <Footer.Divider />
+                    {/* footer Copyright area  */}
                     <Footer.Copyright
                         href="#"
                         className='text-green-900'

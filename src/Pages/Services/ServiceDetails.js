@@ -34,7 +34,7 @@ const ServiceDetails = () => {
 
                 </div>
             </Card>
-{/* review area  */}
+            {/* review area  */}
             <ServiceReview service_id={service._id} key={service._id}></ServiceReview>
 
             {/* review form start  */}
