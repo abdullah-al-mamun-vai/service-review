@@ -20,7 +20,16 @@ const AuthContext = ({ children }) => {
     const handleFb = (provider) => {
         return signInWithPopup(auth, provider)
     }
-
+    //  get user function 
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+            setLoading(false)
+        })
+        return () => {
+            unsubscribe();
+        }
+    }, [])
     // handle sign out 
     const handleOut = () => {
         signOut(auth).then(() => {
