@@ -1,13 +1,16 @@
 import { FacebookAuthProvider, updateProfile } from 'firebase/auth';
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaFacebook } from 'react-icons/fa'
 import { UserContext } from './AuthContext';
 import toast, { } from 'react-hot-toast';
 import UseTitle from '../../TitleHook/TitleHook';
+import { Link } from 'react-router-dom';
 
 const fbUser = new FacebookAuthProvider();
 const Sign = () => {
+    const [error, setError] = useState('');
+
     // title set 
     UseTitle('Sign Up')
     const { handleSign, handleFb } = useContext(UserContext);
@@ -25,7 +28,7 @@ const Sign = () => {
                 toast.success('successfully registered');
 
             })
-            .catch(err => console.log(err))
+            .catch(err => setError(err))
     }
 
     const handleFace = () => {
@@ -96,19 +99,19 @@ const Sign = () => {
                     />
                 </div>
                 <div className="flex items-center gap-2">
-                    <Checkbox id="remember" />
-                    <Label htmlFor="remember">
-                        Remember me
+                    <Label htmlFor="remember" className='text-red-700'>
+                        {error ? 'email-already-in-use' : ''}
                     </Label>
                 </div>
-                <Button type="submit">
+                <Button type="submit" className='bg-green-900'>
                     Submit
                 </Button>
             </form>
             <div>
-                <Button onClick={handleFace} className='w-full  mt-2'>
-                    Log in with <FaFacebook></FaFacebook>
+                <Button onClick={handleFace} className='w-full bg-green-900  mt-2'>
+                    Log in with <FaFacebook className='ml-2'></FaFacebook>
                 </Button>
+                <p className='capitalize font-semibold my-2'>your have already an account, Please <Link className='text-blue-500 font-bold' to={'/login'}>Login</Link></p>
             </div>
         </div>
     );

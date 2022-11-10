@@ -35,8 +35,8 @@ const MyReview = () => {
             .catch(err => console.log(err))
     }
     return (
-        <div className='container mx-auto'>
-            <Table hoverable={true}>
+        <div className='container h-screen w-11/12 mx-auto lg:w-full md:w-full'>
+            <Table hoverable={true} className="">
                 <Table.Head>
                     <Table.HeadCell className="!p-4">
 
@@ -57,7 +57,7 @@ const MyReview = () => {
                         </span>
                     </Table.HeadCell>
                 </Table.Head>
-                <Table.Body className="divide-y">
+                <Table.Body className="divide-y ">
                     {
                         myReview.map(review => <Table.Row key={review._id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                             <Table.Cell className="!p-4">

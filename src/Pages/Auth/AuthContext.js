@@ -6,7 +6,6 @@ const auth = getAuth(app);
 const AuthContext = ({ children }) => {
     const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true);
-    console.log(user)
     const handleSign = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)

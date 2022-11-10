@@ -1,9 +1,9 @@
 import { FacebookAuthProvider } from 'firebase/auth';
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaFacebook } from 'react-icons/fa';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import UseTitle from '../../TitleHook/TitleHook';
 import { UserContext } from './AuthContext';
 
@@ -15,6 +15,7 @@ const Login = () => {
     UseTitle('Login')
     const navigate = useNavigate();
     const location = useLocation();
+    const [error, setError] = useState('');
 
     let from = location.state?.from?.pathname || '/'
     const { handleFb, handleLog } = useContext(UserContext);
@@ -42,7 +43,8 @@ const Login = () => {
                         localStorage.setItem('service-token', data.token)
                     })
             })
-            .catch(err => console.log(err))
+            .catch(err => setError(err))
+        e.target.reset();
     }
 
 
@@ -87,19 +89,19 @@ const Login = () => {
                     />
                 </div>
                 <div className="flex items-center gap-2">
-                    <Checkbox id="remember" />
-                    <Label htmlFor="remember">
-                        Remember me
+                    <Label htmlFor="remember" className='text-red-700'>
+                        {error ? 'Username or password incorrect' : ''}
                     </Label>
                 </div>
-                <Button type="submit">
+                <Button type="submit" className='bg-green-900'>
                     Submit
                 </Button>
             </form>
             <div>
-                <Button onClick={handleFace} className='w-full  mt-2'>
-                    Log in with <FaFacebook></FaFacebook>
+                <Button onClick={handleFace} className='w-full bg-green-900  mt-2'>
+                    Log in with <FaFacebook className='ml-2'></FaFacebook>
                 </Button>
+                <p className='capitalize font-semibold my-2'>don't have account, Please <Link className='text-blue-500 font-bold' to={'/sing'}>Sign Up</Link></p>
             </div>
         </div>
     );

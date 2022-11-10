@@ -1,6 +1,7 @@
 import { Button } from 'flowbite-react';
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Discussion = () => {
     return (
@@ -16,7 +17,7 @@ const Discussion = () => {
                                 When you work with passion you get to drive excellence and you can see continual improvement in the customer service sector. With passion you can easily win the hearts of customers by providing them extraordinary service 24/7. The simplest definition of passion in customer service is remaining enthusiastic and committed to what you are doing no matter whether you reach your target or not. So how does passion drive customer service?
                             </p>
                             <Button color="light" className='flex items-center  text-black'>
-                                Learn More <FaArrowRight className='ml-1' />
+                                <Link to={'/blog'}>Learn More</Link> <FaArrowRight className='ml-1' />
                             </Button>
                         </div>
                         <div className="w-full max-w-xl xl:px-8 xl:w-5/12">

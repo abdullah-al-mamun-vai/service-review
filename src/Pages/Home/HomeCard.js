@@ -18,12 +18,12 @@ const HomeCard = () => {
                 {/* home services section area  */}
                 {
                     homeServices.map(service => <div className="" key={service._id}>
-                        <Card>
+                        <Card className='lg:w-full md:w-4/6 mx-auto'>
                             <div className='relative'>
-                                {/* services thumnail  */}
+                                {/* services thumbnail  */}
                                 <PhotoProvider>
                                     <PhotoView key={service._id} src={service.img}>
-                                        <img src={service.img} className='h-44 w-full' alt="" />
+                                        <img src={service.img} className='h-44 md:w-full' alt="" />
                                     </PhotoView>
                                 </PhotoProvider>
                                 <p className='flex items-center absolute bottom-0 right-0 bg-lime-600 text-white p-3'>{service.rating}<FaStar className='text-amber-500 ml-1' /></p>
@@ -31,7 +31,7 @@ const HomeCard = () => {
                             {/* services title and description  */}
                             <div className='h-44'>
                                 <h5 className="h-28 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {service.service_name}
+                                    {service?.service_name.length > 70 ? service.service_name.slice(0, 70) + '...' : service?.service_name}
                                 </h5>
                                 <p className="font-normal text-gray-700 dark:text-gray-400">
                                     {service?.description.length > 100 ? service.description.slice(0, 100) + '...' : service.description}

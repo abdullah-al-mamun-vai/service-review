@@ -31,12 +31,10 @@ const ServiceDetails = () => {
                 </div>
                 <div className='flex justify-between items-center'>
                     <p className='font-semibold capitalize'>Service Fee: {service.price}</p>
-                    <Button color="success">
-                        <Link to={`/services/${service._id}`} className="flex items-center capitalize"> view details <FaArrowRight className='ml-1' /></Link>
-                    </Button>
+
                 </div>
             </Card>
-
+{/* review area  */}
             <ServiceReview service_id={service._id} key={service._id}></ServiceReview>
 
             {/* review form start  */}

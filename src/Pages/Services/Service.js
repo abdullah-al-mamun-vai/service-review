@@ -10,7 +10,7 @@ const Service = ({ service }) => {
     return (
         <div>
             <div className="">
-                <Card>
+                <Card className='w-11/12 md:w-full lg:w-full mx-auto'>
                     <div className='relative'>
                         {/* service thumbnail  start  */}
                         <PhotoProvider>
